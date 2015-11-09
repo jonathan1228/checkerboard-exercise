@@ -1,16 +1,16 @@
 // Your JS goes here
 
 var body = document.getElementsByTagName('body')[0];
-var color = 82;
+var color1 = 60;
 for(var row = 0; row < 9; row++){
 
 	for(var col = 0; col < 9; col++){
-		color += 4;
+		color1 += 2;
 		if((col + row) % 2 === 0){
-			var square = makeDiv(("'rgb(365, " + color + ", 100)'"));
+			var square = makeDiv(randomColor());
 		}
 		else{
-			var square = makeDiv("'rgb(365, " + color + ", 100)'");
+			var square = makeDiv(randomColor());
 		}
 		body.appendChild(square);			
 	}
@@ -39,15 +39,13 @@ function randomColor(){
 
 }
 function colorizer_base(){
-	var colors = "'rgb(365, " + color + ", 100)'";
+	var colors = "rgb(365, " + color1 + ", 100)";
 	return colors;
 
 }
-​
 function colorizer_gradient(){
-	var colors = "'rgb(180, " + color + ", 19)'";
+	var colors = "rgb(180, " + color1 + ", 80)";
 	return colors;
 
 
 }
-​
