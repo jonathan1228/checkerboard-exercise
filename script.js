@@ -7,10 +7,10 @@ for(var row = 0; row < 9; row++){
 	for(var col = 0; col < 9; col++){
 		color1 += 2;
 		if((col + row) % 2 === 0){
-			var square = makeDiv(randomColor());
+			var square = makeDiv(colorizer_gradient());
 		}
 		else{
-			var square = makeDiv(randomColor());
+			var square = makeDiv(colorizer_base());
 		}
 		body.appendChild(square);			
 	}
