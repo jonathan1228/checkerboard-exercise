@@ -2,19 +2,22 @@
 
 var body = document.getElementsByTagName('body')[0];
 var color1 = 60;
-for(var row = 0; row < 9; row++){
+function flashing(){
+	document.body.innerHTML = '';
+	for(var row = 0; row < 9; row++){
 
-	for(var col = 0; col < 9; col++){
-		color1 += 2;
-		if((col + row) % 2 === 0){
-			var square = makeDiv(colorizer_gradient());
+		for(var col = 0; col < 9; col++){
+			color1 += 2;
+			if((col + row) % 2 === 0){
+				var square = makeDiv(randomColor());
+			}
+			else{
+				var square = makeDiv(randomColor());
+			}
+			body.appendChild(square);			
 		}
-		else{
-			var square = makeDiv(colorizer_base());
-		}
-		body.appendChild(square);			
+
 	}
-
 }
 function makeDiv(color) {
 
@@ -49,3 +52,5 @@ function colorizer_gradient(){
 
 
 }
+flashing();
+setInterval(flashing, 2000);
